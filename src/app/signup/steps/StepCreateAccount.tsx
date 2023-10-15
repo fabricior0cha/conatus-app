@@ -1,37 +1,15 @@
+import CardStep from '@/components/containers/CardStep'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
+import { CardContent, CardFooter } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ChevronRight } from 'lucide-react'
-import Image from 'next/image'
-import React from 'react'
-export default function StepOneCreateAccount() {
+export default function StepCreateAccount() {
   return (
-    <Card className="w-[550px]">
-      <CardHeader>
-        <Image
-          width={180}
-          height={180}
-          src="/assets/images/conatus-logo.png"
-          alt="Conatus"
-          className="my-2"
-        />
-        <div>
-          <hr className="h-px mb-4  bg-gray-200 border-0" />
-        </div>
-        <CardTitle className="mt-4">Crie sua conta agora!</CardTitle>
-        <CardDescription>
-          Adquira sua licença agora e conheça o futuro para gerenciar sua
-          empresa de forma fácil e inteligente.
-        </CardDescription>
-      </CardHeader>
+    <CardStep
+      title="Crie sua conta agora!"
+      description="Adquira sua licença e conheça o futuro para gerenciar sua empresa de forma fácil e inteligente."
+    >
       <CardContent>
         <div className="grid grid-cols-2 w-full items-center gap-2">
           <div className="flex flex-col space-y-1.5">
@@ -61,6 +39,6 @@ export default function StepOneCreateAccount() {
           </span>
         </div>
       </CardFooter>
-    </Card>
+    </CardStep>
   )
 }
