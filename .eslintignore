@@ -1,4 +1,1 @@
-!.jest
-build
-.next
 ./src/components/ui

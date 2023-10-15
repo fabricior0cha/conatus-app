@@ -18,7 +18,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'gradient-conatus':
-          'linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);'
+          'linear-gradient(to right top, #051937, #004e7c, #008aa6, #00c7a3, #5eff76)'
       },
       colors: {
         border: 'hsl(var(--border))',
