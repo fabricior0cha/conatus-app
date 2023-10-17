@@ -12,7 +12,6 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import { ChevronRight } from 'lucide-react'
-import React from 'react'
 
 export default function StepOneUserInfo() {
   return (
