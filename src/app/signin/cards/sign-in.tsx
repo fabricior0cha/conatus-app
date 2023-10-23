@@ -1,4 +1,4 @@
-import TextField from '@/components/form/TextField'
+import TextField from '@/components/form/text-field'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -7,13 +7,14 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
-import FormSignup from '@/types/FormSignup'
+import FormSignin from '@/types/signin/FormSignin'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import { Controller, useFormContext } from 'react-hook-form'
 
 export default function SignIn() {
-  const { control } = useFormContext<FormSignup>()
+  const { control } = useFormContext<FormSignin>()
+
   return (
     <Card className={`w-[550px]`}>
       <CardHeader>
@@ -31,7 +32,7 @@ export default function SignIn() {
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 w-full items-center gap-2">
-          <div>
+          <div className="col-span-2">
             <Controller
               name="email"
               control={control}
@@ -51,7 +52,7 @@ export default function SignIn() {
               )}
             />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-2">
             <Controller
               name="senha"
               control={control}
