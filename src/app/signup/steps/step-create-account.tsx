@@ -112,7 +112,10 @@ export default function StepCreateAccount({ onNext }: Props) {
             </Button>
             <span className="text-xs text-gray-400">
               Já possui uma conta?{' '}
-              <a className="text-slate-950 font-semibold underline">
+              <a
+                className="text-slate-950 font-semibold underline"
+                href="/signin"
+              >
                 Faça login agora
               </a>
             </span>
