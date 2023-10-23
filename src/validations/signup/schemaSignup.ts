@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import fieldEmail from '../commons/fieldEmail'
 
 export const SchemaCreateAccount = z.object({
   nome: z
@@ -7,10 +8,7 @@ export const SchemaCreateAccount = z.object({
     .refine((value) => value.split(' ').length >= 2, {
       message: 'Insira um nome válido.'
     }),
-  email: z
-    .string()
-    .min(3, { message: 'Campo obrigatório' })
-    .email({ message: 'Insira um email válido.' }),
+  email: fieldEmail,
   senha: z
     .string()
     .min(8, { message: 'Insira uma senha com pelo menos 8 caracteres.' })

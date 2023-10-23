@@ -5,7 +5,7 @@ import { FieldError } from 'react-hook-form'
 import { Input } from '../ui/input'
 
 type Props = {
-  label: string
+  label?: string
   type?: 'text' | 'password'
   error?: FieldError
 } & React.InputHTMLAttributes<HTMLInputElement>

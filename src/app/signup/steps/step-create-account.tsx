@@ -2,10 +2,13 @@ import CardStep from '@/components/containers/card-step'
 import TextField from '@/components/form/text-field'
 import { Button } from '@/components/ui/button'
 import { CardContent, CardFooter } from '@/components/ui/card'
+import useFormSignup from '@/stores/useFormSignup'
 import FormSignup from '@/types/signup/FormSignup'
+import handleFillForm from '@/utils/helpers/handleFillForm'
 import { SchemaCreateAccount } from '@/validations/signup/schemaSignup'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ChevronRight } from 'lucide-react'
+import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 type Props = {
@@ -14,18 +17,22 @@ type Props = {
 }
 
 export default function StepCreateAccount({ onNext }: Props) {
-  const { control, handleSubmit } = useForm<FormSignup>({
-    defaultValues: {
-      nome: '',
-      email: '',
-      senha: ''
-    },
+  const { control, handleSubmit, setValue } = useForm<FormSignup>({
     resolver: zodResolver(SchemaCreateAccount)
   })
+
+  const { setForm, form } = useFormSignup((store) => store)
+
+  useEffect(() => {
+    if (form) {
+      handleFillForm<FormSignup>(form, setValue)
+    }
+  }, [])
+
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        console.log(data)
+        setForm(data)
         onNext()
       })}
     >
