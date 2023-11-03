@@ -1,6 +1,6 @@
 import React from 'react'
-import { Label } from '../ui/label'
-import { Select } from '../ui/select'
+import { Label } from './ui/label'
+import { Select } from './ui/select'
 import { SelectProps } from '@radix-ui/react-select'
 import { FieldError } from 'react-hook-form'
 
